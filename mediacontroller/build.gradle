@@ -17,9 +17,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 //apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 31
+    compileSdk 35
     defaultConfig {
         applicationId "com.example.android.mediacontroller"
         minSdkVersion 21
@@ -41,8 +42,8 @@ android {
         dataBinding true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
     namespace 'com.example.android.mediacontroller'
 }
@@ -54,5 +55,5 @@ dependencies {
     implementation "androidx.cardview:cardview:$support_lib_version"
     implementation "androidx.leanback:leanback:$leanback_version"
     implementation "com.google.android.material:material:$material_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7'
 }
